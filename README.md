@@ -28,6 +28,7 @@ int main(){
 
 	if(sock == -1){
 		fprintf(stderr, "something went wrong with libsniff_open_raw");
+		return sock;
 	}
 	// Use sock with recv and a buffer...
 
