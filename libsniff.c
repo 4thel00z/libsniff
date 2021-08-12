@@ -25,7 +25,7 @@ static int libsniff_open_raw(char *iface) {
   memset(&ifr, 0, sizeof(ifr));
   strncpy(ifr.ifr_name, iface, sizeof(ifr.ifr_name) - 1);
   if (ioctl(fd, SIOCGIFINDEX, &ifr) < 0) {
-    printf("Interface %s: \n", iface);
+    fprintf(stderr, "Interface %s: \n", iface);
     perror("ioctl(SIOCGIFINDEX) failed");
     return -1;
   }
@@ -36,7 +36,7 @@ static int libsniff_open_raw(char *iface) {
 
   /* lookup the hardware type */
   if (ioctl(fd, SIOCGIFHWADDR, &ifr) < 0) {
-    printf("Interface %s: \n", iface);
+    fprintf(stderr, "Interface %s: \n", iface);
     perror("ioctl(SIOCGIFHWADDR) failed");
     return -1;
   }
@@ -52,13 +52,13 @@ static int libsniff_open_raw(char *iface) {
   /* bind the raw socket to the interface */
   if (bind(fd, (struct sockaddr *)&sll, sizeof(sll)) < 0) //-V641
   {
-    printf("Interface %s: \n", iface);
+    fprintf(stderr, "Interface %s: \n", iface);
     perror("bind(ETH_P_ALL) failed");
     return -1;
   }
   /* lookup the hardware type */
   if (ioctl(fd, SIOCGIFHWADDR, &ifr) < 0) {
-    printf("Interface %s: \n", iface);
+    fprintf(stderr, "Interface %s: \n", iface);
     perror("ioctl(SIOCGIFHWADDR) failed");
     return -1;
   }
