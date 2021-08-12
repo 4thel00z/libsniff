@@ -1,5 +1,7 @@
 # libsniff
 
+![libsniff logo](https://raw.githubusercontent.com/4thel00z/logos/master/libsniff.png)
+
 ## Motivation
 
 Opening raw sockets in c is mad complicated yo.
