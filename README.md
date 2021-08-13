@@ -19,7 +19,7 @@ clib install 4thel00z/libsniff
 ## Usage
 
 ```c
-#include "../deps/libsniff.h"
+#include "../deps/libsniff/libsniff.h"
 #include <stdio.h>
 
 int main() {
