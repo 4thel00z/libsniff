@@ -27,5 +27,5 @@
 #define ARPHRD_IEEE80211_FULL 803
 #define ARPHRD_ETHERNET 1
 
-static int libsniff_open_raw(char *iface);
+int libsniff_open_raw(char *iface);
 #endif
