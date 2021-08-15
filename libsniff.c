@@ -1,6 +1,6 @@
 #include "libsniff.h"
 
-int libsniff_open_raw(char *iface) {
+static int libsniff_open_raw(char *iface) {
   if (iface == NULL)
     return -1;
   struct ifreq ifr;
